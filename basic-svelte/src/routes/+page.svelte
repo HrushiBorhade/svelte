@@ -1,30 +1,30 @@
 <script lang="ts">
   import Image from "../components/Image.svelte";
-  
-  let fact = "Did you know? Rick Astley's 'Never Gonna Give You Up' was released in 1987!";
+
   const rickFacts = [
     "Did you know? Rick Astley's 'Never Gonna Give You Up' was released in 1987!",
     "The term <b>'Rickrolling'</b> became popular on 4chan in 2007!",
     "Rick Astley himself got <b>Rickrolled</b> on Reddit in 2020!",
     "The original video has over <b>1.2 billion</b> views on YouTube!",
-    "Rick Astley was only <b>21 years old</b> when he recorded the song!"
+    "Rick Astley was only <b>21 years old</b> when he recorded the song!",
   ];
+
+  let index = $state(0);
+  let fact = $derived(rickFacts[index]);
+
+  function incrementIndex() {
+    index = (index + 1) % rickFacts.length;
+  }
 </script>
 
 <div class="container">
   <h1>YOU'VE BEEN RICKROLLED!</h1>
 
-  <Image />   
+  <Image />
 
-  <p> {@html fact}</p>
+  <p>{@html fact}</p>
 
-  <button
-    on:click={() => {
-      const currentIndex = rickFacts.indexOf(fact);
-      const nextIndex = (currentIndex + 1) % rickFacts.length;
-      fact = rickFacts[nextIndex];
-    }}
-    >Show Another Fun Fact!</button>
+  <button onclick={incrementIndex}>Show Another Fun Fact!</button>
 </div>
 
 <style>
@@ -84,7 +84,8 @@
   }
 
   @keyframes bounce {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
     50% {
