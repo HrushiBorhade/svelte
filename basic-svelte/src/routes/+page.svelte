@@ -7,6 +7,12 @@
     "Rick Astley himself got <b>Rickrolled</b> on Reddit in 2020!",
     "The original video has over <b>1.2 billion</b> views on YouTube!",
     "Rick Astley was only <b>21 years old</b> when he recorded the song!",
+    "Rick Astley is a <b>legend</b>!",
+    "The music video was shot in <b>one day</b> at various locations in London!",
+    "Rick Astley won <b>Best British Male Singer</b> at the 1988 Brit Awards!",
+    "The song reached <b>#1</b> in 25 countries worldwide!",
+    "Rick Astley initially <b>retired</b> from the music industry in 1993!",
+    "The song's co-writer Pete Waterman called it <b>'the perfect pop record'</b>!"
   ];
 
   let index = $state(0);
@@ -31,6 +37,15 @@
   <p>{@html fact}</p>
 
   <button onclick={incrementIndex}>Show Another Fun Fact!</button>
+
+  {#if index > 5}
+    <p>You've seen a lot of facts!</p>
+  {:else if index == 0}
+    <p>Click the button to see a fun fact!</p>
+  {:else}
+    <p>You've seen a few facts!</p>
+  {/if}
+
 </div>
 
 <style>

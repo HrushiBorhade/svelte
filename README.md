@@ -5,3 +5,4 @@
 - Introduction
 - Reactivity
 - Props
+- Logic
