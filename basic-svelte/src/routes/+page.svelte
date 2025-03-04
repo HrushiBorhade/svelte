@@ -12,6 +12,12 @@
   let index = $state(0);
   let fact = $derived(rickFacts[index]);
 
+  $inspect(index).with(console.trace);
+  
+  $effect(() => {
+    console.log(`Fact changed to: ${fact}`);
+  });
+  
   function incrementIndex() {
     index = (index + 1) % rickFacts.length;
   }
