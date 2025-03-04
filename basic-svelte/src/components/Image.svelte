@@ -1,6 +1,10 @@
 <script lang="ts">
   let src = "/image.gif";
   let alt = "rick roll image";
+  let { index } = $props();
+  $effect(() => {
+    console.log(`Index changed to: ${index}`);
+  });
 </script>
 
 <img {src} {alt} />
@@ -18,5 +22,4 @@
     transform: scale(1.05);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   }
-  
 </style>

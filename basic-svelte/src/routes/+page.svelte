@@ -13,11 +13,11 @@
   let fact = $derived(rickFacts[index]);
 
   $inspect(index).with(console.trace);
-  
+
   $effect(() => {
     console.log(`Fact changed to: ${fact}`);
   });
-  
+
   function incrementIndex() {
     index = (index + 1) % rickFacts.length;
   }
@@ -26,7 +26,7 @@
 <div class="container">
   <h1>YOU'VE BEEN RICKROLLED!</h1>
 
-  <Image />
+  <Image {index} />
 
   <p>{@html fact}</p>
 
