@@ -12,7 +12,7 @@
     "Rick Astley won <b>Best British Male Singer</b> at the 1988 Brit Awards!",
     "The song reached <b>#1</b> in 25 countries worldwide!",
     "Rick Astley initially <b>retired</b> from the music industry in 1993!",
-    "The song's co-writer Pete Waterman called it <b>'the perfect pop record'</b>!"
+    "The song's co-writer Pete Waterman called it <b>'the perfect pop record'</b>!",
   ];
 
   let index = $state(0);
@@ -26,6 +26,12 @@
 
   function incrementIndex() {
     index = (index + 1) % rickFacts.length;
+  }
+
+  async function getTodos() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const data = await response.json();
+    return data;
   }
 </script>
 
@@ -46,6 +52,24 @@
     <p>You've seen a few facts!</p>
   {/if}
 
+  <h1>list of facts</h1>
+  <div>
+    {#each rickFacts as fact, i}
+      <p>{i + 1}: {@html fact}</p>
+    {/each}
+  </div>
+
+  <h1>list of todos</h1>
+
+  {#await getTodos()}
+    <p>Loading...</p>
+  {:then todos}
+    {#each todos.slice(0, 10) as todo, i}
+      <p>{i + 1}: {todo.title}</p>
+    {/each}
+  {:catch error}
+    <p>Error: {error}</p>
+  {/await}
 </div>
 
 <style>
