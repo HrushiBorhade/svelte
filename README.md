@@ -6,3 +6,5 @@
 - Reactivity
 - Props
 - Logic
+- Events
+- Bindings

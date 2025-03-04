@@ -17,7 +17,7 @@
 
   let index = $state(0);
   let fact = $derived(rickFacts[index]);
-
+  let name = $state("Hrushi");
   $inspect(index).with(console.trace);
 
   $effect(() => {
@@ -43,6 +43,9 @@
   <p>{@html fact}</p>
 
   <button onclick={incrementIndex}>Show Another Fun Fact!</button>
+
+  <input type="text" bind:value={name} />
+  <p>Hey, {name}!</p>
 
   {#if index > 5}
     <p>You've seen a lot of facts!</p>
@@ -105,6 +108,18 @@
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+  }
+
+  input {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+    
     max-width: 600px;
   }
 
