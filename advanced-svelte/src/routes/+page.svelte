@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { SvelteDate } from "svelte/reactivity";
+	import Counter from '../components/Counter.svelte';
 
 	const MAX_SIZE = 200;
 
@@ -52,6 +53,10 @@ $effect(() => {
 });
 </script>
 <p>The time is {date.getHours()}:{pad(date.getMinutes())}:{pad(date.getSeconds())}</p>
+
+<Counter />
+<Counter />
+<Counter />
 
 <h1>Box</h1>
 

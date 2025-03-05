@@ -15,4 +15,4 @@
 
 ## Advanced Svelte
 
-- Advanced Reactivity - Raw state, Reactive classes, Getters and Setters, Reactive Built-ins
+- Advanced Reactivity - Raw state, Reactive classes, Getters and Setters, Reactive Built-ins, Store
