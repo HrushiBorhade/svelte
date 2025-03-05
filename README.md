@@ -16,3 +16,4 @@
 ## Advanced Svelte
 
 - Advanced Reactivity - Raw state, Reactive classes, Getters and Setters, Reactive Built-ins, Store
+- Reusing Content - Snippets and render tags

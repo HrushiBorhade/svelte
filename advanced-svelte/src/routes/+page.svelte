@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { SvelteDate } from "svelte/reactivity";
 	import Counter from '../components/Counter.svelte';
-
+	import WiseMonkey from '../components/WiseMonkey.svelte';
 	const MAX_SIZE = 200;
 
 	class Box {
@@ -52,6 +52,8 @@ $effect(() => {
     };
 });
 </script>
+
+<WiseMonkey />
 <p>The time is {date.getHours()}:{pad(date.getMinutes())}:{pad(date.getSeconds())}</p>
 
 <Counter />
