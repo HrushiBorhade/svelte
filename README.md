@@ -11,3 +11,8 @@
 - Classes and Styles
 - Actions
 - Transitions
+ 
+
+## Advanced Svelte
+
+- Advanced Reactivity - Raw state, Reactive classes, Getters and Setters
