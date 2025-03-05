@@ -1,5 +1,6 @@
 <script lang="ts">
   import Image from "../components/Image.svelte";
+  import CanvasContainer from "../components/Canvas.Container.svelte";
 
   const rickFacts = [
     "Did you know? Rick Astley's 'Never Gonna Give You Up' was released in 1987!",
@@ -36,6 +37,7 @@
 </script>
 
 <div class="container">
+  <CanvasContainer />
   <h1>YOU'VE BEEN RICKROLLED!</h1>
 
   <Image {index} />
@@ -97,6 +99,16 @@
     font-size: 2.5em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     animation: bounce 1s infinite;
+    z-index: -1;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   p {
@@ -119,7 +131,6 @@
     border: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     font-size: 1.2em;
-    
     max-width: 600px;
   }
 
@@ -143,13 +154,4 @@
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
   }
 
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
 </style>

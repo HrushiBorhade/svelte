@@ -8,3 +8,6 @@
 - Logic
 - Events
 - Bindings
+- Classes and Styles
+- Actions
+- Transitions
